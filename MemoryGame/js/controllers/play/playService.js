@@ -6,7 +6,7 @@ export class PlayService {
     }
 
     getCards(){
-        /*
+        
         var cards = [];
         var url = '../../../data/cards.json';
         var request = new XMLHttpRequest();
@@ -28,7 +28,7 @@ export class PlayService {
         request.send();
 
         this.controller.showCards(cards);
-        */
+        
 
     }
 
