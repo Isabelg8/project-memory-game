@@ -99,4 +99,13 @@ button:focus {
 .homeLogo{
     width: auto;
     height: 140px;
+    padding-bottom: 50px;
+}
+
+.home-intro-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
 }

@@ -9,6 +9,8 @@ export class HomeView extends View{
 
         img({ src: './img/logo-mg.svg', className: 'homeLogo'}, this.elementsContainer)
 
+        p({ innerHTML: 'Are you ready?', className: 'home-intro-text'}, this.elementsContainer)
+
         var loginBtn = div({innerHTML: 'Login', className: 'game-button',onclick: this.onButtonClick.bind(this, LOGIN_STATE)}, this.elementsContainer);
         var playBtn = div({innerHTML: 'Play', className: 'game-button', onclick: this.onButtonClick.bind(this, PLAY_STATE)}, this.elementsContainer);
         var creditsBtn = div({innerHTML: 'Credits', className: 'game-button',onclick: this.onButtonClick.bind(this, CREDITS_STATE) }, this.elementsContainer);
