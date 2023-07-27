@@ -6,10 +6,10 @@ export const LOGIN_STATE = 5;
 export const SCORES_STATE = 6;
 export const THEMES_STATE = 7;
 
-export const DIFFICULTY_LOW = 1;
-export const DIFFICULTY_MEDIUM = 2;
-export const DIFFICULTY_HIGH = 3;
+export const DIFFICULTY_LOW = 8;
+export const DIFFICULTY_MEDIUM = 12;
+export const DIFFICULTY_HIGH = 16;
 
-export const THEME_FACES = 1;
-export const THEME_FOOD = 2;
-export const THEME_FLAGS = 3;
+export const THEME_FACES = 'faces';
+export const THEME_FOOD = 'food';
+export const THEME_FLAGS = 'flags';

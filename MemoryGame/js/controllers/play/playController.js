@@ -3,18 +3,16 @@ import { PlayView } from './playView.js';
 import { PlayService } from './playService.js';
 
 export class PlayController extends Controller {
-    constructor (gameManager, parent) {
+    constructor(gameManager, parent) {
         super(gameManager);
         this.view = new PlayView(this, parent);
         this.cards = [];
         this.service = new PlayService(this);
-        this.service.getCards();
+        this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
     }
 
-    showCards(cards){
+    showCards(cards) {
         this.view.showCards(cards)
-
-        
-    }   
+    }
 
 }
