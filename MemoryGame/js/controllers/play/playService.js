@@ -1,12 +1,12 @@
-//import { Card } from "../../models/card";
+import { Card } from '../../models/card.js';
 
 export class PlayService {
-    constructor(controller){
+    constructor(controller) {
         this.controller = controller;
     }
 
-    getCards(){
-        
+    getCards() {
+
         var cards = [];
         var url = '../../../data/cards.json';
         var request = new XMLHttpRequest();
@@ -14,25 +14,25 @@ export class PlayService {
         request.onload = () => {
             if (request.status === 200) {
                 var data = JSON.parse(request.response);
-                
+
                 data.cards.forEach(cardData => {
                     var card = new Card(cardData.id, cardData.icon)
                     cards.push(card);
-                    
+
                 });
-            } else{
+            } else {
                 console.error('Error requesting cards');
-            } 
-           
+            }
+
         }
         request.send();
 
         this.controller.showCards(cards);
-        
+
 
     }
 
-    sendScore(){
+    sendScore() {
 
     }
 }

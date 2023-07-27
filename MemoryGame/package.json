@@ -1,11 +1,19 @@
 {
-  "name": "memorygame",
+  "name": "game",
   "version": "1.0.0",
-  "description": "A memory game front end",
+  "description": "Memory game front end.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "play": "gulp play",
+    "bundle": "gulp bundle",
+    "clean": "gulp clean"
   },
-  "author": "Isabe",
-  "license": "ISC"
+  "author": "Esteban Padilla",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "rollup": "^3.26.0"
+  }
 }
