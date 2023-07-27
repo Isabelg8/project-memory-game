@@ -12,7 +12,7 @@ export class PlayController extends Controller {
     }
 
     showCards(cards) {
-        this.view.showCards(cards)
+        this.view.showCards(cards);
     }
 
 }
