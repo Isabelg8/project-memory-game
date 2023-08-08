@@ -22,11 +22,10 @@ export class PlayService {
             } else {
                 console.error('Error requesting cards');
             }
+            this.controller.showCards(cards);
 
         }
         request.send();
-
-        this.controller.showCards(cards);
 
 
     }

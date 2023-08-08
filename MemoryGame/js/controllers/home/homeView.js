@@ -1,11 +1,12 @@
 import { LOGIN_STATE, PLAY_STATE, CREDITS_STATE, SCORES_STATE, THEMES_STATE, DIFFICULTY_STATE } from '../../libs/constants.js';
 import { div, img, p } from '../../libs/html.js';
-import { View } from '../view.js';
+import { controllerView } from '../controllerView.js';
 
-export class HomeView extends View{
+export class HomeView extends controllerView{
     constructor(controller, parent) {
         super(controller, parent);
-        this.elementsContainer.className = 'homeView';
+        this.container.id = 'homeView';
+        this.elementsContainer.className = 'homeView-elementsContainer';
 
         img({ src: './img/logo-mg.svg', className: 'homeLogo'}, this.elementsContainer)
 

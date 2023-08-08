@@ -16,8 +16,7 @@ export class GameManager {
         this.backBtn = document.getElementById('navigationContainer-back-button');
         this.title = document.getElementById('navigationContainer-title');
         this.contentContainer = document.getElementById('contentContainer');
-        
-        this.presenting(HOME_STATE)
+
         this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
         this.HomeController = new HomeController(this, this.contentContainer);
 
@@ -41,7 +40,18 @@ export class GameManager {
             
         });
 
+        this.contentContainer.addEventListener('username-entered', (event) => {
+            this.username = event.detail.username
+            this.saveUserName();
+            this.goto(HOME_STATE)
+            
+            
+        });
+
         this.loadDifficulty();
+        this.loadTheme();
+        this.loadUsername();
+        this.presenting(PLAY_STATE);
 
         
     }
@@ -118,5 +128,17 @@ export class GameManager {
 
     saveTheme(){
         localStorage.setItem('theme', this.theme);
+    }
+
+    saveUserName(){
+        localStorage.setItem('username', this.username);
+
+    }
+
+    loadUsername(){
+        if(localStorage.getItem('username')){
+            this.username = localStorage.getItem('username');
+            console.log('USERNAME:', this.username);
+        }
     }
 }
