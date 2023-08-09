@@ -11,6 +11,7 @@ export class GameManager {
     constructor(){
         this.difficulty = DIFFICULTY_MEDIUM;
         this.theme = THEME_FOOD;
+        this.username = '';
         this.controller = null;
         this.navigationContainer = document.getElementById('navigationContainer');
         this.backBtn = document.getElementById('navigationContainer-back-button');
@@ -41,9 +42,9 @@ export class GameManager {
         });
 
         this.contentContainer.addEventListener('username-entered', (event) => {
-            this.username = event.detail.username
+            this.username = event.detail.username;
             this.saveUserName();
-            this.goto(HOME_STATE)
+            this.goto(HOME_STATE);
             
             
         });
@@ -51,7 +52,7 @@ export class GameManager {
         this.loadDifficulty();
         this.loadTheme();
         this.loadUsername();
-        this.presenting(PLAY_STATE);
+        this.presenting(SCORES_STATE);
 
         
     }

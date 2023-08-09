@@ -1,4 +1,5 @@
 import { div, p } from '../../libs/html.js';
+import { CardView } from '../../views/cardView.js';
 import { controllerView } from "../controllerView.js";
 
 export class PlayView extends controllerView{
@@ -16,10 +17,10 @@ export class PlayView extends controllerView{
 
     showCards(cards){
         this.cardsContainer.innerHTML = '';
-        console.log(cards);
 
         cards.forEach(card => {
-            
+
+            let cardView = new CardView(this.cardsContainer, card); 
             
         });
 

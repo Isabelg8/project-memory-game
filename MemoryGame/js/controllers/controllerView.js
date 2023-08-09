@@ -1,4 +1,4 @@
-import {div} from "../libs/html.js"
+import {div} from "../libs/html.js";
 import { View } from "../views/view.js";
 
 export class controllerView extends View {

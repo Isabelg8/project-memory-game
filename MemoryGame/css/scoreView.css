@@ -1,0 +1,35 @@
+.scoreView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scoreView-nameContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 30px;
+  
+
+}
+
+.scoreView-valuesContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.scoreView-valueContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

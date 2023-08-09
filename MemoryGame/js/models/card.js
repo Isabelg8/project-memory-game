@@ -3,6 +3,7 @@ export class Card {
         this.id = id;
         this.icon = icon;
         this.isDiscovered = isDiscovered;
+        this.isSelected = false;
     }
 
 }

@@ -1,13 +1,15 @@
 import { Card } from '../../models/card.js';
+import { Service } from '../service.js';
 
-export class PlayService {
+export class PlayService extends Service{
     constructor(controller) {
-        this.controller = controller;
+        super(controller);
     }
 
     getCards(difficulty, theme) {
         var cards = [];
         var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}`;
+        //var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${2}/type/${theme}`;
         var request = new XMLHttpRequest();
         request.open('get', url);
         request.onload = () => {
@@ -30,7 +32,13 @@ export class PlayService {
 
     }
 
-    sendScore() {
+    sendScore(score, clicks, time, username) {
+        //console.log(username);
+        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+
+        var request = new XMLHttpRequest();
+        request.open('POST', url);
+        request.send(JSON.stringify({score: score, clicks: clicks, time: time, username: username}))
 
     }
 }
