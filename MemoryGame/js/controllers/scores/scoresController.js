@@ -12,10 +12,8 @@ export class ScoresController extends Controller{
     }
 
     showScores(scores){
-        scores.forEach(score =>{
-
-        });
-
+        this.scores = scores;
+        this.view.showScores(this.scores);
 
     }
 }

@@ -52,7 +52,7 @@ export class GameManager {
         this.loadDifficulty();
         this.loadTheme();
         this.loadUsername();
-        this.presenting(SCORES_STATE);
+        this.presenting(DIFFICULTY_STATE);
 
         
     }

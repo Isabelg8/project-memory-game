@@ -1,9 +1,9 @@
 
 :root {
-    --primary-color-dark: #1769aa;
+    --primary-color-dark: #350462;
     --primary-color: #8d29ed;
-    --primary-color-light: #4dabf5;
-    --secondary-color-dark: #686258;
+    --primary-color-light: #cae3e5;
+    --secondary-color-dark: #424242;
     --secondary-color: #4be063;
     --secondary-color-light: #6ff085;
     --background-color: #1e1e1e;
@@ -14,6 +14,12 @@
 * { padding: 0; margin: 0; font-family: "alfarn", sans-serif; }
 h1 { color:var(--primary-color) }
 h2 { color:var(--secondary-color) }
+
+hr {
+    width: 100%;
+    border-color: var(--primary-color-dark);
+    margin-bottom: 20px;
+}
 
 button {
     min-width: 60px;
@@ -41,8 +47,8 @@ button:focus {
 
 .contentContainer{
     background-color: #2196f3;
-    max-width: 500px;
-    background-color: antiquewhite;
+    /* max-width: 500px; */
+    background-color: rgb(67, 67, 67);
     width: 100%;
     height: calc(100% - var(--navigationContainer-height));
     

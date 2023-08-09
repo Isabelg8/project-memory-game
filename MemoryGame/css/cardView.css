@@ -16,7 +16,7 @@
 }
 
 .cardView-container{
-    background-color: bisque;
+    background-color: var(--primary-color);
     width: 80px; 
     height: 90px;
     display: flex;
@@ -27,16 +27,16 @@
 }
 
 .cardView-hidden {
-    background-color: aqua;
+    background-color: var(--primary-color);
 
 }
 
 .cardView-selected {
-    background-color: rgb(57, 220, 54);
+    background-color: var(--secondary-color);
 
 }
 
 .cardView-discovered {
-    background-color: rgb(3, 67, 28);
+    background-color: var(--primary-color-light);
 
 }

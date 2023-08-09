@@ -1,5 +1,5 @@
 import { DIFFICULTY_LOW, DIFFICULTY_MEDIUM, DIFFICULTY_HIGH } from "../../libs/constants.js";
-import { div } from "../../libs/html.js";
+import { div,p } from "../../libs/html.js";
 import { controllerView } from "../controllerView.js";
 
 export class DifficultyView extends controllerView{
@@ -7,10 +7,13 @@ export class DifficultyView extends controllerView{
         super(controller, parent);
         this.elementsContainer.className = 'difficultyView';
 
+        p({ innerHTML: 'Like a cake, right?', className: 'difficultyView-title'}, this.elementsContainer)
         div({ innerHTML: 'Low', className:'game-button', onclick: this.onButtonClick.bind(this, DIFFICULTY_LOW)}, this.elementsContainer);
 
+        p({ innerHTML: 'Are you really trying??', className: 'difficultyView-title'}, this.elementsContainer)
         div({ innerHTML: 'Medium', className:'game-button', onclick: this.onButtonClick.bind(this, DIFFICULTY_MEDIUM)}, this.elementsContainer);
 
+        p({ innerHTML: 'lets spice things up!', className: 'difficultyView-title'}, this.elementsContainer)
         div({ innerHTML: 'High', className:'game-button', onclick: this.onButtonClick.bind(this, DIFFICULTY_HIGH)}, this.elementsContainer);
 
         }

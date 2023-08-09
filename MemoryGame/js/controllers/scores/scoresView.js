@@ -9,11 +9,9 @@ export class ScoresView extends controllerView{
     }
 
     showScores(scores){
-        //this.scores = scores;
-        //this.view.showScores(this.scores);
 
         scores.forEach(score => {
-            let scoreview = new ScoreView(this, this.container, score);
+            let scoreview = new ScoreView(this.elementsContainer, score);
             
         });
 
