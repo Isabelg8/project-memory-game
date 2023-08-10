@@ -1,4 +1,4 @@
-import { div, input } from "../../libs/html.js";
+import { div, input, p } from "../../libs/html.js";
 import { controllerView } from "../controllerView.js";
 
 export class LoginView extends controllerView{
@@ -6,6 +6,7 @@ export class LoginView extends controllerView{
         super(controller, parent);
         this.elementsContainer.className = 'loginView';
 
+        p({ innerHTML: 'Put your name for evidence', className: 'creditsView-p'}, this.elementsContainer)
         this.usernameIn = input({placeholder:'Username', className:'loginView-usernameIn'}, this.elementsContainer);
         this.okBtn = div({innerHTML: 'OK', className:'game-button', onclick: this.onOkBtn.bind(this)}, this.elementsContainer);
     

@@ -19,8 +19,8 @@
     justify-content: center;
     align-items: center;
     height: 100px;
-    color: yellow;
-    font-size: 30px;
+    color: white;
+    font-size: 25px;
 /*    background-color: var(--primary-color-dark);
   width: 100%;*/
 
@@ -48,10 +48,10 @@
 
 .scoreView-value-title{
     color: black;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .scoreView-value-description{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }

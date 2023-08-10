@@ -13,6 +13,7 @@ export class HomeView extends controllerView{
         p({ innerHTML: 'Are you ready?', className: 'home-intro-text'}, this.elementsContainer)
 
         var playBtn = div({innerHTML: 'Play', className: 'game-button', onclick: this.onButtonClick.bind(this, PLAY_STATE)}, this.elementsContainer);
+        p({ innerHTML: 'Lets check other things', className: 'home-intro-text2'}, this.elementsContainer)
         var creditsBtn = div({innerHTML: 'Credits', className: 'game-button',onclick: this.onButtonClick.bind(this, CREDITS_STATE) }, this.elementsContainer);
         var scoresBtn = div({innerHTML: 'Scores', className: 'game-button', onclick: this.onButtonClick.bind(this, SCORES_STATE)}, this.elementsContainer);
         var themesBtn = div({innerHTML: 'Themes', className: 'game-button', onclick: this.onButtonClick.bind(this, THEMES_STATE)}, this.elementsContainer);

@@ -115,3 +115,9 @@ button:focus {
     width: 100%;
     text-align: center;
 }
+
+.home-intro-text2{
+    color: var(--primary-color);
+    padding-top: 40px;
+    
+}

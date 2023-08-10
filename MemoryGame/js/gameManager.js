@@ -52,14 +52,13 @@ export class GameManager {
         this.loadDifficulty();
         this.loadTheme();
         this.loadUsername();
-        this.presenting(DIFFICULTY_STATE);
+        //this.presenting(DIFFICULTY_STATE);
 
         
     }
 
     presenting(state){
-        console.log('presenting', state);
-
+       
         if (this.controller != null){
             this.controller.delete();
             this.controller = null;
