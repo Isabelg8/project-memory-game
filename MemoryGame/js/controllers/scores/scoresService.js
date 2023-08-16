@@ -1,4 +1,4 @@
-import{Service} from "../service.js";
+import { Service } from "../service.js";
 import { Score } from "../../models/score.js";
 
 export class ScoresService extends Service {
@@ -8,8 +8,9 @@ export class ScoresService extends Service {
 
     getScores() {
         var scores = [];
-        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
-      
+        // var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+        var url = 'http://localhost:3000/scores'
+
         var request = new XMLHttpRequest();
         request.open('get', url);
         request.onload = () => {
@@ -18,12 +19,11 @@ export class ScoresService extends Service {
 
                 var data = JSON.parse(request.response);
                 console.log(data);
-                data.forEach(scoreData => {
+                for (const key in data) {
+                    const scoreData = data[key];
                     let score = new Score(scoreData.clicks, scoreData.score, scoreData.time, scoreData.username);
-                    scores.push(score);   
-                });
-
-                
+                    scores.push(score);
+                }
             } else {
                 console.error('Error requesting scores');
             }

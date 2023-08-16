@@ -1,7 +1,7 @@
 import { Card } from '../../models/card.js';
 import { Service } from '../service.js';
 
-export class PlayService extends Service{
+export class PlayService extends Service {
     constructor(controller) {
         super(controller);
     }
@@ -40,7 +40,7 @@ export class PlayService extends Service{
 
         var request = new XMLHttpRequest();
         request.open('POST', url);
-        request.send(JSON.stringify({score: score, clicks: clicks, time: time, username: username}))
+        request.send(JSON.stringify({ score: score, clicks: clicks, time: time, username: username }))
 
     }
 }
