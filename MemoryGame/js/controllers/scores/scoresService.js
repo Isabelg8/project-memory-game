@@ -17,6 +17,7 @@ export class ScoresService extends Service {
             if (request.status === 200) {
 
                 var data = JSON.parse(request.response);
+                console.log(data);
                 data.forEach(scoreData => {
                     let score = new Score(scoreData.clicks, scoreData.score, scoreData.time, scoreData.username);
                     scores.push(score);   

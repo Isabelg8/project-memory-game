@@ -9,10 +9,20 @@
     background-color: var(--background-color);
 }
 
-.homeView-button {
-    height: 40px;
+.homeView-buttonsContainer {
     width: 50%;
-    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+
+.homeView-smallButton {
+    height: 50px;
+    width: 45%;
+    background-color: var(--primary-color);
 
     display: flex;
     align-items: center;
@@ -21,11 +31,11 @@
     font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
-    margin-top: 10px;
+    margin: 5px;
 }
 
 .homeView_text {
     font-size: 30px;
     font-weight: bold;
-    color: brown;
+    color: rgb(255, 255, 255);
 }
