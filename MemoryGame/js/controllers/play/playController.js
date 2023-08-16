@@ -5,14 +5,14 @@ import { PlayService } from './playService.js';
 export class PlayController extends Controller {
     constructor(gameManager, parent) {
         super(gameManager);
-        this.view = new PlayView(this, parent);
+        this.view = new PlayView(this, parent, gameManager.theme);
         this.cards = null;
         this.service = new PlayService(this);
         this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
-        
+
         this.timer = null;
         this.time = 0;
-        this.clicks = 0; 
+        this.clicks = 0;
 
         //this.view.container.addEventListener( 'card-selected', this.onCardSelected.bind(this));
         window.addEventListener('card-selected', (event) => {
@@ -26,10 +26,10 @@ export class PlayController extends Controller {
         this.cards = cards;
         this.view.showCards(cards);
         this.timer = window.setInterval(this.gameTick.bind(this), 1000);
-        
+
     }
 
-    resetGame(){
+    resetGame() {
         this.killGameTimer();
         this.time = 0;
         this.clicks = 0;
@@ -37,22 +37,22 @@ export class PlayController extends Controller {
         this.view.updateHUD(this.clicks, this.time);
     }
 
-    gameTick () {
+    gameTick() {
         this.time += 1;
         this.view.updateHUD(this.clicks, this.time);
     }
 
-    onCardSelected(){
+    onCardSelected() {
 
-        if(this.hiddenTimer !== null) return;
+        if (this.hiddenTimer !== null) return;
 
         this.clicks += 1;
         this.view.updateHUD(this.clicks, this.time);
-    
+
         var event = new CustomEvent('show-card-on-selected', {
             detail: {
                 test: 9,
-            }, 
+            },
             bubbles: true,
             cancelable: true,
             composed: false,
@@ -64,30 +64,30 @@ export class PlayController extends Controller {
 
         this.cards.forEach(card => {
             if (!card.isDiscovered) {
-                if (cardSelected1 === null && card.isSelected){
+                if (cardSelected1 === null && card.isSelected) {
                     cardSelected1 = card;
-                    
-                }else if (cardSelected2 === null && card.isSelected){
+
+                } else if (cardSelected2 === null && card.isSelected) {
                     cardSelected2 = card;
                 }
-                
-            }      
-            
+
+            }
+
         });
 
-        if (cardSelected1 !== null && cardSelected2 !== null){
-            if(cardSelected1.id === cardSelected2.id){
+        if (cardSelected1 !== null && cardSelected2 !== null) {
+            if (cardSelected1.id === cardSelected2.id) {
                 var event = new CustomEvent('show-card-on-discovered', {
                     detail: {
                         test: 9,
-                    }, 
+                    },
                     bubbles: true,
                     cancelable: true,
                     composed: false,
                 });
                 this.view.container.dispatchEvent(event);
 
-                if(this.checkGameComplete()){
+                if (this.checkGameComplete()) {
                     this.killGameTimer();
                     let score = this.clicks + this.time;
                     this.service.sendScore(this.clicks, this.time, this.gameManager.username);
@@ -95,11 +95,11 @@ export class PlayController extends Controller {
                     //show game complete / to do
                 }
             } else {
-                this.hiddenTimer = window.setTimeout (() => {
+                this.hiddenTimer = window.setTimeout(() => {
                     var event = new CustomEvent('hide-selected-card', {
                         detail: {
                             test: 9,
-                        }, 
+                        },
                         bubbles: true,
                         cancelable: true,
                         composed: false,
@@ -107,27 +107,27 @@ export class PlayController extends Controller {
                     this.view.container.dispatchEvent(event);
                     window.clearTimeout(this.hiddenTimer);
                     this.hiddenTimer = null;
-                   
-                    
+
+
                 }, 750)
-                
+
             }
         }
-         
+
     }
 
-    killGameTimer(){
+    killGameTimer() {
         window.clearInterval(this.timer);
         this.timer = null;
     }
 
 
-    checkGameComplete(){
+    checkGameComplete() {
         for (let i = 0; i < this.cards.length; i++) {
             const card = this.cards[i];
-            if (!card.isDiscovered){
+            if (!card.isDiscovered) {
                 return false;
-            }    
+            }
         }
         return true;
     }

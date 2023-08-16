@@ -40,3 +40,8 @@
     background-color: var(--primary-color-light);
 
 }
+
+.cardView-image {
+    width: 50px;
+    height: auto;
+}
