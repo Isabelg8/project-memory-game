@@ -8,8 +8,8 @@ export class PlayService extends Service {
 
     getCards(difficulty, theme) {
         var cards = [];
-        //var url = `https://ana-isabel-mg.vercel.app/cards/${difficulty}/${theme}`;
-        var url = `http://localhost:3000/cards/${difficulty}/${theme}`;
+        var url = `https://ana-isabel-mg.vercel.app/cards/${difficulty}/${theme}`;
+        //var url = `http://localhost:3000/cards/${difficulty}/${theme}`;
         //var url = `http://localhost:3000/cards/${difficulty}/type/${theme}`;
         //var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}`;
         //var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${2}/type/${theme}`;
@@ -38,6 +38,7 @@ export class PlayService extends Service {
     sendScore(score, clicks, time, username) {
         //console.log(username);
         var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+        //var url = `https://ana-isabel-mg.vercel.app/scores`;
 
         var request = new XMLHttpRequest();
         request.open('POST', url);
