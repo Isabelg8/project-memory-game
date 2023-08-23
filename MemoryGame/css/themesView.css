@@ -4,7 +4,15 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    padding-top: 20px;
     flex-direction: column;
     background-color: var(--background-color);
+    overflow: scroll;
+}
+
+.themeView-text{
+    color: var(--secondary-color);
+    padding-top: 30px;
+    
 }

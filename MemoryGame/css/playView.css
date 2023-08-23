@@ -4,11 +4,17 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    padding-top: 30px;
     flex-direction: column;
     background-color: var(--background-color);
     overflow: scroll;
 }
+
+ /* 
+@media only screen and (min-width: 800px) {
+
+}*/
 
 .playView-cardsContainer{
 
@@ -25,6 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 5px;
 
 }
 
@@ -40,4 +47,12 @@
     width: 90px;
  
 
+}
+
+.playView-title{
+
+    color: var(--secondary-color);
+    font-size: 20px;
+    background-color: var(--background-color);
+    margin-bottom: 10px;
 }

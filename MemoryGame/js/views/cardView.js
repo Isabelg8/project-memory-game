@@ -1,6 +1,6 @@
 import { View } from "./view.js";
 import { div, img } from "../libs/html.js";
-import { THEME_FAST_FOOD } from "../libs/constants.js";
+import { THEME_FAST_FOOD, THEME_HALLOWEEN, THEME_SERIES } from "../libs/constants.js";
 
 export class CardView extends View {
     constructor(parent, card, theme) {
@@ -53,15 +53,16 @@ export class CardView extends View {
 
     showCardContent() {
         if (this.card.isSelected) {
-            if (this.theme === THEME_FAST_FOOD) {
+            if (this.theme === THEME_FAST_FOOD || this.theme === THEME_HALLOWEEN || this.theme === THEME_SERIES) {
                 // this.iconContainer.innerHTML = `<img src="img/fastFood/${this.card.icon}">`;
                 this.iconContainer.innerHTML = '';
-                img({ src: `img/fastFood/${this.card.icon}`, className: 'cardView-image' }, this.iconContainer)
+                img({ src: `img/imgCards/${this.card.icon}`, className: 'cardView-image' }, this.iconContainer)
             } else {
                 this.iconContainer.innerHTML = this.card.icon;
             }
         }
     }
+
 
     showOnDiscovered() {
 

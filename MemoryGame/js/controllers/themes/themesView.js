@@ -1,5 +1,5 @@
-import { THEME_ANIMALS, THEME_FACES, THEME_FLAGS, THEME_FOOD, THEME_FAST_FOOD } from "../../libs/constants.js";
-import { div } from "../../libs/html.js";
+import { THEME_ANIMALS, THEME_FACES, THEME_FAST_FOOD, THEME_SERIES, THEME_HALLOWEEN } from "../../libs/constants.js";
+import { div, p } from "../../libs/html.js";
 import { controllerView } from "../controllerView.js";
 
 export class ThemesView extends controllerView {
@@ -7,14 +7,19 @@ export class ThemesView extends controllerView {
         super(controller, parent);
         this.elementsContainer.className = 'themesView';
 
-        div({ innerHTML: 'Food', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_FOOD) }, this.elementsContainer);
+        p({ innerHTML: 'how good its your knowledge?', className: 'themeView-text'}, this.elementsContainer)
+        div({ innerHTML: 'TV Shows', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_SERIES) }, this.elementsContainer);
 
-        div({ innerHTML: 'Faces', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_FACES) }, this.elementsContainer);
+        p({ innerHTML: 'lets make Shigetaka Kurita proud', className: 'themeView-text'}, this.elementsContainer)
+        div({ innerHTML: 'Emojis', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_FACES) }, this.elementsContainer);
 
-        div({ innerHTML: 'Flags', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_FLAGS) }, this.elementsContainer);
+        p({ innerHTML: 'Are you scared?', className: 'themeView-text'}, this.elementsContainer)
+        div({ innerHTML: 'Halloween', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_HALLOWEEN) }, this.elementsContainer);
 
+        p({ innerHTML: 'Cuter than you, right?', className: 'themeView-text'}, this.elementsContainer)
         div({ innerHTML: 'Animals', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_ANIMALS) }, this.elementsContainer);
 
+        p({ innerHTML: 'What you eat every day -.-', className: 'themeView-text'}, this.elementsContainer)
         div({ innerHTML: 'Fast Food', className: 'game-button', onclick: this.onButtonClick.bind(this, THEME_FAST_FOOD) }, this.elementsContainer);
     }
 

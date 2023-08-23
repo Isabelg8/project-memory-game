@@ -8,8 +8,9 @@ export class ScoresService extends Service {
 
     getScores() {
         var scores = [];
-        // var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
-        var url = 'http://localhost:3000/scores'
+        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+        //var url = 'http://localhost:3000/scores'
+        //var url = 'https://ana-isabel-mg.vercel.app/scores/'
 
         var request = new XMLHttpRequest();
         request.open('get', url);

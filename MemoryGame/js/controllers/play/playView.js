@@ -8,6 +8,8 @@ export class PlayView extends controllerView {
         this.theme = theme;
         this.container.id = 'playView';
         this.elementsContainer.className = 'playView-elementsContainer';
+        this.introText = p({ innerHTML: 'SHOW YOUR MOVES!', className: 'playView-title' }, this.elementsContainer);
+        
         this.hudContainer = div({ className: 'playView-hudContainer' }, this.elementsContainer);
         this.cardsContainer = div({ className: 'playView-cardsContainer' }, this.elementsContainer);
 

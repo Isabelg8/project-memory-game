@@ -1,16 +1,16 @@
 import { HomeController } from './controllers/home/homeController.js';
 import { DifficultyController} from './controllers/difficulty/difficultyController.js';
 import { ThemesController} from './controllers/themes/themesController.js';
-import { CreditsController} from './controllers/Credits/creditsController.js';
+import { CreditsController} from './controllers/credits/creditsController.js';
 import { LoginController} from './controllers/login/loginController.js';
 import { PlayController} from './controllers/play/playController.js';
 import { ScoresController} from './controllers/scores/scoresController.js';
-import { CREDITS_STATE, DIFFICULTY_MEDIUM, DIFFICULTY_STATE, HOME_STATE, LOGIN_STATE, PLAY_STATE, SCORES_STATE, THEMES_STATE, THEME_FOOD } from './libs/constants.js';
+import { CREDITS_STATE, DIFFICULTY_MEDIUM, DIFFICULTY_STATE, HOME_STATE, LOGIN_STATE, PLAY_STATE, SCORES_STATE, THEMES_STATE, THEME_FACES } from './libs/constants.js';
 
 export class GameManager {
     constructor(){
         this.difficulty = DIFFICULTY_MEDIUM;
-        this.theme = THEME_FOOD;
+        this.theme = THEME_FACES;
         this.username = '';
         this.controller = null;
         this.navigationContainer = document.getElementById('navigationContainer');
@@ -53,7 +53,7 @@ export class GameManager {
         this.loadDifficulty();
         this.loadTheme();
         this.loadUsername();
-        //this.presenting(DIFFICULTY_STATE);
+        //this.presenting(PLAY_STATE);
 
         
     }
@@ -76,6 +76,7 @@ export class GameManager {
                 break;
             case HOME_STATE:
                 this.backBtn.classList.add('hidden');
+                //this.iconLogo.classList.add('hidden');
                 this.title.innerHTML = 'Home';
                 //this.controller = new HomeController(this, this.contentContainer);
                 break;
