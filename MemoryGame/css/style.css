@@ -7,7 +7,7 @@
     --secondary-color: #4be063;
     --secondary-color-light: #6ff085;
     --background-color: #1e1e1e;
-    --navigationContainer-height: 60px;
+    --navigationContainer-height: 100px;
     --fadecolor: rgba(0, 0, 1);
 }
 
@@ -55,7 +55,7 @@ button:focus {
 }
 
 .game-button {
-    height: 50px;
+    height: 60px;
     width: 50%;
     background-color: var(--secondary-color);
 
@@ -67,26 +67,34 @@ button:focus {
     font-weight: bold;
     border-radius: 10px;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.game-button:hover {
+
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .navigationContainer{
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     height: var(--navigationContainer-height);
     width: 100%;
-    display: flex;
+   /* display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row; */
 }
 
 .navigationContainer-back-button {
     /* width: 20%; */
     position: fixed;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
-    margin-left: 20px;
+    margin-left: 30px;
     cursor: pointer;
+    margin-top: 20px;
 
 }
 
@@ -96,6 +104,22 @@ button:focus {
     font-weight: bold;
     width: 100%;
     text-align: center;
+    color: var(--secondary-color);
+}
+
+.nav-logo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.navigationContainer img{
+    width: auto;
+    height: 60px;
+    flex-direction: column;
+
 }
 
 .hidden {
@@ -109,15 +133,10 @@ button:focus {
 }
 
 .home-intro-text{
-    color: #fff;
+    color: var(--secondary-color);
     font-size: 20px;
     font-weight: bold;
     width: 100%;
     text-align: center;
 }
 
-.home-intro-text2{
-    color: var(--primary-color);
-    padding-top: 40px;
-    
-}

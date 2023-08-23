@@ -15,6 +15,7 @@ export class GameManager {
         this.controller = null;
         this.navigationContainer = document.getElementById('navigationContainer');
         this.backBtn = document.getElementById('navigationContainer-back-button');
+        this.iconLogo = document.getElementById('nav-logo');
         this.title = document.getElementById('navigationContainer-title');
         this.contentContainer = document.getElementById('contentContainer');
 
