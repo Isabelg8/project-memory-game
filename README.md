@@ -6,6 +6,6 @@ Backend
 // Es para correr en development
 vercel dev 
 
-// Para hacer deploymento, commit y push github
+// Para hacer deployment, commit y push github
 vercel --prod
 
